@@ -10,11 +10,15 @@ var CONTACTS_COLLECTION = "contacts"; // Define a coleção do banco de dados
 var app = express(); // Executa express
 app.use(bodyParser.json());
 
-// Cria variável do banco de dados fora da conexão com o banco para pode reutilizar no app.
-var db;
+
+// Cria link para o diretório de build do Angular
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
 // Cria variável do banco de dados fora da conexão com o banco para pode reutilizar no app.
 var db;
+
+ 
 
 // Conecta com a base de dados antes de rodar o servidor do app. 
 mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://acesso:senha123@ds163020.mlab.com:63020/limberapp", function (err, client) {
