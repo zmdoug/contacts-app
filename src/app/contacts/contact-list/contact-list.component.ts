@@ -50,10 +50,8 @@ export class ContactListComponent implements OnInit {
     var contact: Contact = {
       name: '',
       email: '',
-      phone: {
-        work: '',
-        mobile: ''
-      }
+      twitter: '',
+      phone: ''
     };
 
     // Seleciona o contato recém criado
