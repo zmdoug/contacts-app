@@ -1,12 +1,17 @@
-<div class="card">
+<div *ngIf="!contact" class="card">
+<div class="card-header">Bem vindo(a)</div>
+<div class="card-body">Selecione um contato no menu ao lado ou cadastre um novo</div>
+</div>
+
+<div *ngIf="contact" class="card">
 
     <div class="card-header">
-      <div *ngIf="contact" class="row">
+      <div  class="row">
       <div class="col-md-12">
       <h2 *ngIf="contact._id">Dados do contato</h2>
       <h2 *ngIf="!contact._id">Novo contato</h2>
       </div>
-    </div>
+      </div>
 
       <div class="card-body">
         <div *ngIf="contact" class="row">
