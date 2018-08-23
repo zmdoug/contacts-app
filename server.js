@@ -100,8 +100,7 @@ app.get("/api/contacts/:id", function(req, res) {
 app.put("/api/contacts/:id", function(req, res) {
   var updateDoc = req.body;
   delete updateDoc._id;
-
-  db.collection(CONTACTS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, updateDoc, function(err, doc) {
+   db.collection(CONTACTS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, {$set:{"name": req.body.name, "email": req.body.email, "twitter": req.body.twitter, "phone": req.body.phone}}, function(err, doc){
     if (err) {
       exibeErro(res, err.message, "Falha ao atualizar contato");
     } else {
