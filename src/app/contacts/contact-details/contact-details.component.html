@@ -22,8 +22,8 @@
       <label for="contact-phone">Telefone</label>
       <input class="form-control" name="contact-phone" [(ngModel)]="contact.phone" placeholder="(99) 9 9999-9999"/>
     </div>
-    <button class="btn btn-primary" *ngIf="!contact._id" (click)="createContact(contact)">Cadastrar</button>
-    <button class="btn btn-info" *ngIf="contact._id" (click)="updateContact(contact)">Atualizar</button>
-    <button class="btn btn-danger" *ngIf="contact._id" (click)="deleteContact(contact._id)">Excluir</button>
+    <button class="btn btn-primary" *ngIf="!contact._id" (click)="createContact(contact)" data-toggle="snackbar" data-style="toast" data-content="Novo contato cadastrado">Cadastrar</button>
+    <button class="btn btn-info" *ngIf="contact._id" (click)="updateContact(contact)" data-toggle="snackbar" data-style="toast" data-content="Contato Atualizado.">Atualizar</button>
+    <button class="btn btn-danger" *ngIf="contact._id" (click)="deleteContact(contact._id)" data-toggle="snackbar" data-style="toast" data-content="Contato excluído.">Excluir</button>
   </form>
 </div>
