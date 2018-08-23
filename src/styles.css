@@ -19,3 +19,7 @@
 	width: 100%;
 	text-align: right;
 }
+.painelButton {
+	float: right;
+	width: 50px;
+}
