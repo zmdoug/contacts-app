@@ -9,7 +9,9 @@
         {{contact.name}}
       </li>
     </ul>
-    <button class="btn btn-warning" (click)="createNewContact()">Novo</button>
+    <button type="button" (click)="createNewContact()" class="btn btn-danger bmd-btn-fab">
+    <i class="material-icons">person_add</i>
+    </button>
   </div>
   <div class="col-md-5 col-md-offset-2">
     <contact-details
