@@ -27,10 +27,7 @@ export class ContactListComponent implements OnInit {
       .then((contacts: Contact[]) => {
         this.contacts = contacts.map((contact) => {
           if (!contact.phone) {
-            contact.phone = {
-              mobile: '',
-              work: ''
-            }
+            contact.phone = ''
           }
           return contact;
         });
