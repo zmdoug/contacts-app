@@ -34,4 +34,64 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://acesso:senha12
   });
 });
 
-// CONTACTS API ROUTES BELOW
+// ROTAS DA API CONTACT
+
+// Função de retorno de erros.
+function exibeErro(res, reason, message, code) {
+  console.log("ERROR: " + reason);
+  res.status(code || 500).json({"error": message});
+}
+
+/*  "/api/contact"
+ *    GET: Busca todos contatos
+ *    POST: Cria um novo contato
+ */
+
+app.get("/api/contacts", function(req, res) {
+  db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      exibeErro(res, err.message, "Falha ao buscar contatos.");
+    } else {
+      res.status(200).json(docs);
+    }
+  });
+});
+
+app.post("/api/contacts", function(req, res) {
+  var newContact = req.body;
+  newContact.createDate = new Date();
+
+  if (!req.body.name) {
+    exibeErro(res, "Dados inválidos", "Insira um nome.", 400);
+  } else {
+    db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
+      if (err) {
+        exibeErro(res, err.message, "Falha ao criar novo contato");
+      } else {
+        res.status(201).json(doc.ops[0]);
+      }
+    });
+  }
+});
+
+/*  "/api/contact/:id"
+ *    GET: Busca um contato pelo id
+ */
+
+app.get("/api/contacts/:id", function(req, res) {
+});
+
+/*  "/api/contact/:id"
+ *    PUT: Atualiza um contato usando id
+ */
+
+
+app.put("/api/contacts/:id", function(req, res) {
+});
+
+/*  "/api/contact/:id"
+ *    DELETE: Deleta um contato usando id
+ */
+
+app.delete("/api/contacts/:id", function(req, res) {
+});
