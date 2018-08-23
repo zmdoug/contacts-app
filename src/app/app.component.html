@@ -1,14 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">App de contatos</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <span class="navbar-brand">App de contatos</span>
+  <div class="btn-group pull-xs-right">
+  <button class="btn bmd-btn-icon dropdown-toggle" type="button" id="mw1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="material-icons">more_vert</i>
   </button>
-  <div class="collapse navbar-collapse" id="navbarText">
+  <div class="dropdown-menu" aria-labelledby="mw1">
+    <button class="dropdown-item" type="button">Log-out</button>
+  </div>
+</div>
+ <!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+  <!-- <div class="collapse navbar-collapse" id="navbarText">
   
     <span class="navbar-text">
       <a class="nav-link" href="#">Log-out</a>
     </span>
-  </div>
+  </div> -->
 	</nav>
 <div class="container">
   <contact-list></contact-list>
