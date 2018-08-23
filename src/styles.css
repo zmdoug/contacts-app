@@ -2,3 +2,10 @@
 .container {
 	margin-top: 50px;
 }
+.bg-primary {
+    background-color: #3f51b5!important;
+}
+.navbar-brand {
+	color:#fff;
+	text-transform: uppercase;
+}
