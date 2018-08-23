@@ -1,8 +1,12 @@
-<div *ngIf="contact" class="row">
+<div class="card">
+  <div class="card-body">
+    <div class="card-header">
+    <div *ngIf="contact" class="row">
   <div class="col-md-12">
     <h2 *ngIf="contact._id">Dados do contato</h2>
     <h2 *ngIf="!contact._id">Novo contato</h2>
   </div>
+</div>
 </div>
 <div *ngIf="contact" class="row">
   <form class="col-md-12">
@@ -26,4 +30,6 @@
     <button class="btn btn-info" *ngIf="contact._id" (click)="updateContact(contact)" data-toggle="snackbar" data-style="toast" data-content="Contato Atualizado.">Atualizar</button>
     <button class="btn btn-danger" *ngIf="contact._id" (click)="deleteContact(contact._id)" data-toggle="snackbar" data-style="toast" data-content="Contato excluído.">Excluir</button>
   </form>
+</div>
+</div>
 </div>
