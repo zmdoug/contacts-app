@@ -66,3 +66,12 @@
           stroke-dashoffset: -124px;
         }
       }
+
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+.appTitle {
+  font-weight: 300;
+}
+ 
