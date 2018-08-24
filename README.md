@@ -1,28 +1,47 @@
 # ListaDeContatosApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+[DEMONSTRAÇÃO ->](https://ancient-river-30979.herokuapp.com/)
 
-## Development server
+Projeto gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 6.1.5.
+Dependências:
+    "@angular/animations": "^6.1.0",
+    "@angular/cli": "^6.1.5",
+    "@angular/common": "^6.1.0",
+    "@angular/compiler": "^6.1.0",
+    "@angular/compiler-cli": "^6.1.4",
+    "@angular/core": "^6.1.0",
+    "@angular/forms": "^6.1.0",
+    "@angular/http": "^6.1.0",
+    "@angular/platform-browser": "^6.1.0",
+    "@angular/platform-browser-dynamic": "^6.1.0",
+    "@angular/router": "^6.1.0",
+    "body-parser": "^1.18.3",
+    "core-js": "^2.5.4",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.3",
+    "rxjs": "^6.0.0",
+    "zone.js": "~0.8.26"
+    
+## Demonstr
+    
+## Iniciando aplicação
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Executar `ng build --output-path dist` em seguida `node server.js` ou `nodemon server.js`
+   
+## Banco de dados
 
-## Code scaffolding
+Utilizado banco de dados externo Mongodb: www.mlab.com
+Caso desejar utilizar um banco de dados local alterar a linha `24` do arquivo `server.js`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Executar projeto para desenvolvimento
 
-## Build
+Executar `ng serve` para rodar um servidor de desenvolvimento. Acesse `http://localhost:4200/`. O App atualiza automaticamente a cada alteração no servidor.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Servidor para desenvolvimento
 
-## Running unit tests
+Executar `ng serve` para rodar um servidor de desenvolvimento. Acesse `http://localhost:4200/`. O App atualiza automaticamente a cada alteração no servidor.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Build (Compilar projeto)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# projetocontatos
+Executar `ng build` para compilar o projeto. Se precisar execute `ng build --output-path dist` . 
+O projeto irá compilar para a pasta `dist/` . 
