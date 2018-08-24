@@ -1,42 +1,41 @@
-<div *ngIf="!contact" class="card">
-<div class="card-header"><h2>Bem vindo(a)</h2></div>
-<div class="card-body">Selecione um contato no menu ao lado ou cadastre um novo.</div>
-</div>
+  <div *ngIf="!contact" class="card">
+    <div class="card-header"><h2 class="app-title">Bem vindo(a)</h2></div>
+    <div class="card-body">Selecione um contato no menu ao lado ou cadastre um novo.</div>
+  </div>
 
-<div *ngIf="contact" class="card">
+  <div *ngIf="contact" class="card">
+      <div class="card-header">
+        <div  class="row">
+            <div class="col-md-12 mb-3">
+            <h2 *ngIf="contact._id" class="app-title"><i class="material-icons">person_pin</i> Dados do contato</h2>
+            <h2 *ngIf="!contact._id" class="app-title"><i class="material-icons">person_pin</i> Novo contato</h2>
+            </div>
+        </div>
 
-    <div class="card-header">
-      <div  class="row">
-      <div class="col-md-12">
-      <h2 *ngIf="contact._id">Dados do contato</h2>
-      <h2 *ngIf="!contact._id">Novo contato</h2>
-      </div>
-      </div>
-
-      <div class="card-body">
-        <div *ngIf="contact" class="row">
-          <form class="col-md-12">
-            <div class="form-group">
-              <label for="contact-name">Nome</label>
-              <input class="form-control" name="contact-name" [(ngModel)]="contact.name" placeholder="Nome"/>
-            </div>
-            <div class="form-group">
-              <label for="contact-email">Email</label>
-              <input class="form-control" name="contact-email" [(ngModel)]="contact.email" placeholder="meu@email.com"/>
-            </div>
-            <div class="form-group">
-              <label for="contact-twitter">Twitter</label>
-              <input class="form-control" name="contact-twitter" [(ngModel)]="contact.twitter" placeholder="http://twitter.com/usuario"/>
-            </div>
-            <div class="form-group">
-              <label for="contact-phone">Telefone</label>
-              <input class="form-control" name="contact-phone" [(ngModel)]="contact.phone" placeholder="(99) 9 9999-9999"/>
-            </div>
-            <button class="btn btn-primary" *ngIf="!contact._id" (click)="createContact(contact)" data-toggle="snackbar" data-style="toast" data-content="Novo contato cadastrado">Cadastrar</button>
-            <button class="btn btn-info" *ngIf="contact._id" (click)="updateContact(contact)" data-toggle="snackbar" data-style="toast" data-content="Contato Atualizado.">Atualizar</button>
-            <button class="btn btn-danger" *ngIf="contact._id" (click)="deleteContact(contact._id)" data-toggle="snackbar" data-style="toast" data-content="Contato excluído.">Excluir</button>
-          </form>
+        <div class="card-body">
+          <div *ngIf="contact" class="row">
+            <form class="col-md-12">
+              <div class="form-group">
+                <label for="contact-name">Nome</label>
+                <input class="form-control" name="contact-name" [(ngModel)]="contact.name" placeholder="Nome"/>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input class="form-control" name="contact-email" [(ngModel)]="contact.email" placeholder="meu@email.com"/>
+              </div>
+              <div class="form-group">
+                <label for="contact-twitter">Twitter</label>
+                <input class="form-control" name="contact-twitter" [(ngModel)]="contact.twitter" placeholder="http://twitter.com/usuario"/>
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Telefone</label>
+                <input class="form-control" name="contact-phone" [(ngModel)]="contact.phone" placeholder="(99) 9 9999-9999"/>
+              </div>
+              <button class="btn btn-primary" *ngIf="!contact._id" (click)="createContact(contact)" data-toggle="snackbar" data-style="toast" data-content="Novo contato cadastrado">Cadastrar</button>
+              <button class="btn btn-info" *ngIf="contact._id" (click)="updateContact(contact)" data-toggle="snackbar" data-style="toast" data-content="Contato Atualizado.">Atualizar</button>
+              <button class="btn btn-danger" *ngIf="contact._id" (click)="deleteContact(contact._id)" data-toggle="snackbar" data-style="toast" data-content="Contato excluído.">Excluir</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-</div>
+  </div>

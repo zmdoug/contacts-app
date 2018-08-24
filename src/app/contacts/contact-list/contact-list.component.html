@@ -1,6 +1,6 @@
-<div class="row">
-  <div class="col-md-5">
-    <h2>Contatos</h2>
+<div class="row"  >
+  <div class="col-md-5 mb-3">
+    <h2 class="app-title">Contatos</h2>
     <ul class="list-group">
       <li class="list-group-item"
         *ngFor="let contact of contacts"
@@ -13,7 +13,7 @@
     <i class="material-icons">person_add</i>
     </button>
   </div>
-  <div class="col-md-5 col-md-offset-2">
+  <div class="col-md-5 col-md-offset-2 ">
     <contact-details
       [contact]="selectedContact"
       [createHandler]="addContact"
