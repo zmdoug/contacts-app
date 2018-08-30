@@ -21,7 +21,7 @@ var db;
  
 
 // Conecta com a base de dados antes de rodar o servidor do app. 
-mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://acesso:senha123@ds163020.mlab.com:63020/limberapp", function (err, client) {
+mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://:@ds163020.mlab.com:63020/limberapp", function (err, client) {
   if (err) {
     console.log(err); 
     process.exit(1);
